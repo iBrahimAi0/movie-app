@@ -3,7 +3,11 @@ import Search from "./Components/Search"
 import MovieCard from "./Components/MovieCard";
 import Spiner from "./Components/Spiner";
 import { useDebounce } from "react-use";
-import {updateSearchCount,getTrendingMovies} from "./appwrite"; 
+import {updateSearchCount,getTrendingMovies} from "./appwrite";
+import HeroImage from "/assets/hero-img.png"
+import Logo from "/assets/logo.svg"
+import Arrow from "/assets/arrow.png";
+
 const App = () => {
   const [searchInput,setSearchInput] = useState("");
   const [errorMessage,setErrorMessage] = useState("");
@@ -81,8 +85,8 @@ const App = () => {
       <div className="pattern">
         <div className="wrapper">
           <header>
-            <img src="./assets/logo.svg" alt="Logo" className="w-20" />
-            <img src="./assets/hero-img.png" alt="Hero image" />
+            <img src={Logo} alt="Logo" className="w-20" />
+            <img src={HeroImage} alt="Hero image" />
             <h1>Find <span className="text-gradient">Movies</span> You’ll Love Without the Hassle</h1>
             <Search searchInput={searchInput} setSearchInput={setSearchInput}/>
           </header>
@@ -109,9 +113,9 @@ const App = () => {
                     </ul>)}
            </section>
            <section className="pagination">
-              <img className="r-arrow" src="./assets/arrow.png" alt="Arrow" onClick={() => {setpage((prev) => Math.max(prev - 1,1))}} />
+              <img className="r-arrow" src={Arrow} alt="Arrow" onClick={() => {setpage((prev) => Math.max(prev - 1,1))}} />
               <p><span>{page}</span> / {totalPages}</p>
-              <img className="l-arrow"  src="./assets/arrow.png" alt="Arrow" onClick={() => {setpage((prev) => Math.min(prev + 1,totalPages))}} />
+              <img className="l-arrow"  src={Arrow} alt="Arrow" onClick={() => {setpage((prev) => Math.min(prev + 1,totalPages))}} />
            </section>
         </div>
       </div>

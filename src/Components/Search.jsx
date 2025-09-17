@@ -1,3 +1,4 @@
+import searchIcon from "/assets/search.svg";
 
 const Search = ({searchInput,setSearchInput}) => {
     
@@ -5,7 +6,7 @@ const Search = ({searchInput,setSearchInput}) => {
     <div>
         <div className="search">
             <div>
-                <img src="../assets/search.svg" alt="Search icon" />
+                <img src={searchIcon} alt="Search icon" />
                 <input onChange={(e) => {setSearchInput(e.target.value)} } value={searchInput} type="text" placeholder='Search for a movie' />
             </div>
         </div>
